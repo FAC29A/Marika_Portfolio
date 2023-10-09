@@ -38,7 +38,7 @@ All colour choices were regularly tested with [WebAIM's Contrast Checker](https:
 
 
 ## 4. Use various tools to check that our website meets accessibility criteria
-<img width="672" alt="Screenshot_2023-09-26_at_20 29 20" src="https://github.com/FAC29A/Marika_Portfolio/assets/126022615/37984e69-914c-45e6-bde7-5cec1d74c6df">
+<img width="669" alt="Screenshot 2023-10-09 at 21 22 54" src="https://github.com/FAC29A/Marika_Portfolio/assets/126022615/b3245f9e-a37f-45d2-b28f-e960542db082">
 
 - **LiveServer**: Used for real-time visualisation and testing during development.
   
