@@ -42,7 +42,9 @@ All colour choices were regularly tested with [WebAIM's Contrast Checker](https:
 
 - **LiveServer**: Used for real-time visualisation and testing during development.
   
-- **Lighthouse**: Chrome's built-in Lighthouse functionality to analyse and improve accessibility scores. 
+- **Lighthouse**: Chrome's built-in Lighthouse functionality to analyse and improve accessibility scores.
+
+- [a11yproject checklist](https://www.a11yproject.com/checklist/)
 
 
 ## 5. Use CSS media queries to ensure our content is always presented effectively on screens of different sizes
