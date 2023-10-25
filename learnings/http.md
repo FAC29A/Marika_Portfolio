@@ -73,48 +73,7 @@ By chaining `.then()` callbacks, we were able to first transform the raw respons
 
 
 ## 3. Use promises to access values that aren’t available synchronously
-Promises are pivotal in ensuring that, even when data retrieval might be unpredictable or take variable lengths of time, my code remains clean, easy to understand, and efficient in its execution.
-
-One key instance of this is evident in my work with the `fetchUnsplashImage` function:
-
-
-```js
-async function fetchUnsplashImage() {
-    const cityName = userCity;
-    const unsplashUrl = `https://api.unsplash.com/search/photos?query=${cityName}&orientation=landscape`;
-
-    try {
-        const response = await fetch(unsplashUrl, {
-            headers: {
-                Authorization: `Client-ID ${unsplashAccessKey}`,
-            },
-        });
-
-        if (!response.ok) {
-            await fetchMarsImage();
-            return;
-        }
-
-        const data = await response.json();
-
-        if (!data.results || data.results.length === 0) {
-            displayErrorMessage(`No images found for ${cityName} on Unsplash.`);
-            await fetchMarsImage();
-            return;
-        }
-
-        const imageUrl = data.results[0].urls.full; // Extract the URL of the first image
-        setBackgroundImage(imageUrl);
-
-    } catch (error) {
-        console.error('Error fetching image from Unsplash:', error);
-        await fetchMarsImage(); 
-    }
-}
-```
-Here, by incorporating the `async/await` syntax, a feature built on top of promises, I ensured a seamless and user-friendly experience. The function aims to fetch a city-specific image from Unsplash. If it encounters issues, whether due to non-availability of the image for the specified city or any network-related glitches, it falls back to fetch a default Mars image. This approach using promises allows me to keep the code intuitive while ensuring robust error handling.
-
-In this code, instead, I used `await Promise.all(promises)` to ensure that the code waits for all these asynchronous data fetching operations to finish before proceeding. This approach allows me to access values like user input and data fetched from remote sources, which may not be available synchronously, in a controlled and organised manner within the code.
+I used `await Promise.all(promises)` to ensure that the code waits for all these asynchronous data fetching operations to finish before proceeding. This approach allows me to access values like user input and data fetched from remote sources, which may not be available synchronously, in a controlled and organised manner within the code.
 
 ```js
 document.getElementById('loadingIndicator').style.display = 'flex';
@@ -177,8 +136,7 @@ getWeatherForCity('London')
 When the user wants to gather the current weather details for a specific location, we employ the `fetch` method to communicate with weather service providers. The `fetch` method allows our application to make asynchronous HTTP requests, meaning that while our application awaits data from the server, it remains responsive to user interactions. Once a request is sent, the server processes it and sends back an appropriate response, often in JSON format, which we then interpret and present to the user.
 
 ## 5. Configure the options argument of the fetch method to make GET and POST requests
-
-For making these requests, I've designed the `fetch` configurations depending on the nature and requirements of the API. When fetching images from Unsplash based on the user's city input or Mars, we perform a GET request. The Unsplash API requires an authorization header for authentication. To cater to this, I configure the `fetch` method with an options argument that includes the necessary headers. These headers contain our access key which authenticates our application with the Unsplash service.
+When fetching images from Unsplash based on the user's city input or Mars, we perform a GET request. The Unsplash API requires an authorization header for authentication. To cater to this, I configure the `fetch` method with an options argument that includes the necessary headers. These headers contain our access key which authenticates our application with the Unsplash service.
 
 Similarly, for fetching weather data based on a given city and date, we perform a GET request. This request is formulated by constructing the URL using query parameters, which includes the API key, the city's name, and the date.
 
@@ -286,8 +244,8 @@ function setBackgroundImage(imageUrl) {
 In this function, I check if there's a provided image URL. If not, a default image (in this case, an image of Mars) is set as the background. 
 
 We also implemented a `loadingIndicator` function that dynamically toggles the classes applied to DOM nodes, resulting in changes to their CSS properties. This `loadingIndicator` becomes visible when a user enters a city name in the search bar. Its visibility is controlled by the toggling of CSS properties, providing users with a visual cue while data is being fetched. You can observe this functionality in action when the user clicks the 'Search' button.
-<img width="1280" alt="Screenshot 2023-10-25 at 22 46 38" src="https://github.com/FAC29A/Marika_Portfolio/assets/126022615/a8f3ada6-d9c2-4101-8aa8-cd18adbee65f">
 
+<img width="1280" alt="Screenshot 2023-10-25 at 23 34 02" src="https://github.com/FAC29A/Marika_Portfolio/assets/126022615/5338ca2a-a4ce-44a1-8f6d-6e8cc3b1ccc1">
 
 ## 11. Use consistent layout and spacing
 In this code snippet, we've demonstrated the consistent usage of padding, margins, and button colour schemes, while effectively applying colour contrasts to distinguish the header, content, and footer sections. This CSS code ensures a uniform layout and consistent spacing throughout the user interface. 
@@ -342,7 +300,9 @@ In this code snippet, we've demonstrated the consistent usage of padding, margin
 ## 12. Follow a spacing guideline to give our app a consistent feel
 I've consistently followed a spacing guideline to ensure our app maintains a cohesive and balanced appearance. 
 
-<img width="1280" alt="Screenshot 2023-10-25 at 23 34 02" src="https://github.com/FAC29A/Marika_Portfolio/assets/126022615/5338ca2a-a4ce-44a1-8f6d-6e8cc3b1ccc1">
+<img width="978" alt="Screenshot 2023-10-25 at 23 27 32" src="https://github.com/FAC29A/Marika_Portfolio/assets/126022615/8fd32875-d966-4d19-836c-04eca280702b">
+
+
 
 
 
