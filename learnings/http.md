@@ -161,36 +161,7 @@ const backgroundContainer = document.querySelector('.background-container');
 
 
 ## 9. Add and remove DOM nodes to change the content on the page
-The following examples demonstrate how we display error messages and set background images for users by adding and removing DOM nodes. We manipulate elements, set attributes, and even modify class lists to achieve these effects.
 
-```js
-function displayErrorMessage(message) {
-    const errorElement = document.querySelector('.error-message');
-    if (errorElement) {
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-    }
-}
-```
-
-```js
-function clearErrorMessage() {
-    const errorElement = document.querySelector('.error-message');
-    if (errorElement) {
-        errorElement.style.display = 'none';
-    }
-}
-```
-
-In this example, I demonstrate how to dynamically change the background image of a specified container in the user interface. Whether retrieving a new image URL from Unsplash or using a default Mars image, this feature enhances the visual experience for users. To achieve this, I identify the target DOM element and adjust its `backgroundImage` CSS property, as shown in the `setBackgroundImage` function:
-
-```js
-function setBackgroundImage(imageUrl) {
-    const backgroundContainer = document.querySelector('.background-image');
-    backgroundContainer.style.backgroundImage = `url(${imageUrl})`;
-}
-
-```
 
 ## 10. Toggle the classes applied to DOM nodes to change their CSS properties
 Whenever I need to change the background, I simply update the backgroundImage style property of my backgroundContainer. This ensures that users get a fresh visual context, tailored to their input, making their interaction with the application more immersive. Below is a snippet from my code showcasing this functionality:
