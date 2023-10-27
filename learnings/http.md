@@ -25,10 +25,9 @@ async function fetchUnsplashImage() {
 
         const data = await response.json();
         const imageUrl = data.results[0].urls.full; 
-        // Some function to handle the fetched image URL
+        
     } catch (error) {
         console.error('Error fetching image from Unsplash:', error);
-        // Handle the error, perhaps by fetching from another source or displaying an error to the user
     }
 }
 
