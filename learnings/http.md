@@ -301,15 +301,7 @@ Debugging is an essential part of ensuring our web application functions smoothl
 
 ```js
 // Fetches an image from Unsplash based on the user's city input.
-async function fetchUnsplashImage() {
-    const cityName = userCity;
-
-    // Check if the "Search" button is clicked before fetching the image
-    if (!isSearchButtonClicked) {
-        return;
-    }
-
-    const unsplashUrl = `https://api.unsplash.com/search/photos?query=${cityName}&orientation=landscape`;
+const unsplashUrl = `https://api.unsplash.com/search/photos?query=${cityName}&orientation=landscape`;
     console.log('Requesting Unsplash URL:', unsplashUrl);
 
     try {
