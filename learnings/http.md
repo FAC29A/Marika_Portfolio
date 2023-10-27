@@ -214,13 +214,6 @@ In this code snippet, we've demonstrated the consistent usage of padding, margin
     text-align: center;
 }
 
-.footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
 /* Maintain font consistency across sections */
 .header,
 .content,
