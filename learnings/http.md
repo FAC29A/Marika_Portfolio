@@ -65,7 +65,6 @@ document.getElementById('loadingIndicator').style.display = 'flex';
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     const cityInput = document.getElementById('earthCityInput');
-    const cityInputValue = cityInput.value;
 
     if (cityInputValue) {
         updateUserCity(cityInputValue);
@@ -75,11 +74,6 @@ document.getElementById('loadingIndicator').style.display = 'flex';
 
         // Stop the loading indicator after all fetches are done
         document.getElementById('loadingIndicator').style.display = 'none';
-    } else {
-        // Stop the loading indicator after all fetches are done
-        document.getElementById('loadingIndicator').style.display = 'none';
-        alert("Please enter a valid city name.");
-        await fetchMarsImage();
     }
 ```
 
