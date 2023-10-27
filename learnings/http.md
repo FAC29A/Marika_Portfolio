@@ -164,24 +164,18 @@ const backgroundContainer = document.querySelector('.background-container');
 
 
 ## 10. Toggle the classes applied to DOM nodes to change their CSS properties
-Whenever I need to change the background, I simply update the backgroundImage style property of my backgroundContainer. This ensures that users get a fresh visual context, tailored to their input, making their interaction with the application more immersive. Below is a snippet from my code showcasing this functionality:
 
 ```js
-//Set the background image
-function setBackgroundImage(imageUrl) {
-    if (!imageUrl) {
-        imageUrl = DEFAULT_IMAGE;
-    }
+// Start the loading indicator
+    document.getElementById('loadingIndicator').style.display = 'flex';
 
-    const backgroundContainer = document.querySelector('.background-image');
-    backgroundContainer.style.backgroundImage = `url(${imageUrl})`;
-    backgroundContainer.style.backgroundSize = 'cover';
-    backgroundContainer.style.backgroundRepeat = 'no-repeat';
-}
+
+// Stop the loading indicator after all fetches are done
+        document.getElementById('loadingIndicator').style.display = 'none';
 ```
-In this function, I check if there's a provided image URL. If not, a default image (in this case, an image of Mars) is set as the background. 
+ 
 
-We also implemented a `loadingIndicator` function that dynamically toggles the classes applied to DOM nodes, resulting in changes to their CSS properties. This `loadingIndicator` becomes visible when a user enters a city name in the search bar. Its visibility is controlled by the toggling of CSS properties, providing users with a visual cue while data is being fetched. You can observe this functionality in action when the user clicks the 'Search' button.
+We implemented a `loadingIndicator` function that dynamically toggles the classes applied to DOM nodes, resulting in changes to their CSS properties. This `loadingIndicator` becomes visible when a user enters a city name in the search bar. Its visibility is controlled by the toggling of CSS properties, providing users with a visual cue while data is being fetched. You can observe this functionality in action when the user clicks the 'Search' button.
 
 <img width="1280" alt="Screenshot 2023-10-25 at 23 34 02" src="https://github.com/FAC29A/Marika_Portfolio/assets/126022615/5338ca2a-a4ce-44a1-8f6d-6e8cc3b1ccc1">
 
