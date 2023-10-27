@@ -104,9 +104,6 @@ To fetch the weather data for a city, I used the following:
 
 
 ```js
-const apiKey = 'YOUR_WEATHER_API_KEY';
-const apiUrl = 'https://api.weatherapi.com/v1/current.json';
-
 // Function to fetch weather data for a specific city
 async function getWeatherForCity(city) {
     try {
@@ -122,15 +119,6 @@ async function getWeatherForCity(city) {
         throw error;
     }
 }
-
-// Example usage
-getWeatherForCity('London')
-    .then(data => {
-        // Display or process the weather data
-    })
-    .catch(error => {
-        console.error('Failed to retrieve weather:', error);
-    });
 ```
 
 When the user wants to gather the current weather details for a specific location, we employ the `fetch` method to communicate with weather service providers. The `fetch` method allows our application to make asynchronous HTTP requests, meaning that while our application awaits data from the server, it remains responsive to user interactions. Once a request is sent, the server processes it and sends back an appropriate response, often in JSON format, which we then interpret and present to the user.
