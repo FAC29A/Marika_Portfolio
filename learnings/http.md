@@ -124,9 +124,9 @@ async function getWeatherForCity(city) {
 When the user wants to gather the current weather details for a specific location, we employ the `fetch` method to communicate with weather service providers. The `fetch` method allows our application to make asynchronous HTTP requests, meaning that while our application awaits data from the server, it remains responsive to user interactions. Once a request is sent, the server processes it and sends back an appropriate response, often in JSON format, which we then interpret and present to the user.
 
 ## 5. Configure the options argument of the fetch method to make GET and POST requests
-When fetching images from Unsplash based on the user's city input or Mars, we perform a GET request. The Unsplash API requires an authorization header for authentication. To cater to this, I configure the `fetch` method with an options argument that includes the necessary headers. These headers contain our access key which authenticates our application with the Unsplash service.
+When fetching images from Unsplash based on the user's city input or Mars, we perform a `GET` request. The Unsplash API requires an authorisation header for authentication. To cater to this, I configure the `fetch` method with an options argument that includes the necessary headers. These headers contain our access key which authenticates our application with the Unsplash service.
 
-Similarly, for fetching weather data based on a given city and date, we perform a GET request. This request is formulated by constructing the URL using query parameters, which includes the API key, the city's name, and the date.
+Similarly, for fetching weather data based on a given city and date, we perform a `GET` request. This request is formulated by constructing the URL using query parameters, which includes the API key, the city's name, and the date.
 
 Here's a snippet from the code that illustrates these configurations:
 
