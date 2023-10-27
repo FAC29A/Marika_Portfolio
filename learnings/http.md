@@ -248,13 +248,6 @@ const unsplashUrl = `https://api.unsplash.com/search/photos?query=${cityName}&or
             },
         });
 
-        // If the fetch isn't successful, retrieve a Mars image
-        if (!response.ok) {
-            // throw new Error(`Failed to fetch image from NASA ${response.status} ${response.statusText}`);
-            await fetchMarsImage();
-            return;
-        }
-
         // ... (Code for processing and setting the fetched image)
 
     } catch (error) {
@@ -272,9 +265,6 @@ nasaAPI
     .then((marsData) => {
         // ... (Code for processing Mars API data)
 
-        // Populate the buttons with terrestrial dates
-        buttons.forEach((button, index) => {
-            button.textContent = marsDates[index];
             console.log("Mars Parameter Data:", parameterData.mars);
         });
 
