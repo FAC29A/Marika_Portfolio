@@ -10,42 +10,28 @@ The code incorporates the use of `async` and `await` keywords, especially eviden
 
 ```js
 async function fetchUnsplashImage() {
-    const cityName = userCity;
-
-    // Check if the "Search" button is clicked before fetching the image
-    if (!isSearchButtonClicked) {
-        return;
-    }
-
-    const unsplashUrl = `https://api.unsplash.com/search/photos?query=${cityName}&orientation=landscape`;
+    const unsplashUrl = `https://api.unsplash.com/search/photos?query=someCity&orientation=landscape`;
 
     try {
         const response = await fetch(unsplashUrl, {
             headers: {
-                Authorization: `Client-ID ${unsplashAccessKey}`,
+                Authorization: `Client-ID someAccessKey`,
             },
         });
 
         if (!response.ok) {
-            await fetchMarsImage();
-            return;
+            throw new Error('Failed to fetch from Unsplash');
         }
 
         const data = await response.json();
-
-        if (!data.results || data.results.length === 0) {
-            displayErrorMessage(`No images found for ${cityName} on Unsplash.`);
-            await fetchMarsImage();
-            return;
-        }
         const imageUrl = data.results[0].urls.full; 
-        setBackgroundImage(imageUrl);
-
+        // Some function to handle the fetched image URL
     } catch (error) {
         console.error('Error fetching image from Unsplash:', error);
-        await fetchMarsImage();
+        // Handle the error, perhaps by fetching from another source or displaying an error to the user
     }
 }
+
 ```
 
 
