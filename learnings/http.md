@@ -279,7 +279,7 @@ In this code, I placed `console.log()` statements to log relevant information an
 
 
 ## 14. Use console.log() to help us debug our code
-We also used `console.log()` regularly to monitor and troubleshoot potential issues with the remote API servers. This helps us maintain the reliability and functionality of our web application.
+We used `console.log()` regularly to monitor and troubleshoot potential issues with the remote API servers. This helps us maintain the reliability and functionality of our web application.
 
 ```js
 // Populate the buttons with terrestrial dates
@@ -289,5 +289,3 @@ buttons.forEach((button, index) => {
 });
 ```
 The line of code, `"Mars Parameter Data:", parameterData.mars`, has been strategically placed to provide real-time insight into the "Mars Parameter Data" and the contents of the `parameterData.mars` object.
-
-This approach enables you to closely inspect the values and structure of this data during runtime. As a result, you can quickly identify any anomalies or errors, making it considerably easier to pinpoint and rectify issues within our codebase.
