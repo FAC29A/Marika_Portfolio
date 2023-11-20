@@ -14,7 +14,9 @@ This portfolio template is designed to showcase my skills and accomplishments to
    - Functions, callbacks, and asynchronous JavaScript; fetch and promises, API. 
 3. **Testing (Weeks 7-9)**
    - Testing libraries, unit testing, integration testing, automated tests, variable scoping, debugging, and test-driven development.
-6. **Post-course**
+4. **Projects (Weeks 10-12)**
+   - Applying learned concepts in real-world projects
+5. **Post-course**
    - Reinforcing fundamentals through ongoing project work and the Execute Programme, covering JavaScript Arrays, Concurrency, Modern JavaScript, Regular Expressions, SQL, and optionally TypeScript, with a preliminary look at the apprenticeship curriculum.
 
 ### Learnings Documentation
